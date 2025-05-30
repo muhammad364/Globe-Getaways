@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="adminstyles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="reports.html" class="active">Reports</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Reports</h1>
+        </header>
+        <div class="graphs">
+            <div class="graph-card">
+                <h3>Monthly Bookings</h3>
+                <canvas id="monthlyBookingsChart"></canvas>
+            </div>
+            <div class="graph-card">
+                <h3>Revenue Trends</h3>
+                <canvas id="revenueTrendsChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const monthlyBookingsCtx = document.getElementById('monthlyBookingsChart').getContext('2d');
+        const monthlyBookingsChart = new Chart(monthlyBookingsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Bookings',
+                    data: [120, 150, 180, 200, 220, 250, 300, 280, 260, 240, 230, 210],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+       
+        const revenueTrendsCtx = document.getElementById('revenueTrendsChart').getContext('2d');
+        const revenueTrendsChart = new Chart(revenueTrendsCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Revenue',
+                    data: [5000, 7000, 8000, 9000, 10000, 12000, 15000, 14000, 13000, 11000, 10000, 9000],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

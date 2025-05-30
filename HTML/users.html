@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="adminstyles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="users.html" class="active">Users</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Users</h1>
+        </header>
+
+        <!-- Users Table -->
+        <div class="users-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Haroon</td>
+                        <td>haroonawan0035@gmail.com</td>
+                        <td>Admin</td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mashaim Gull</td>
+                        <td>mashaim.gull@gmail.com</td>
+                        <td>User</td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Aaila Imran</td>
+                        <td>aailaimran36@gmail.com</td>
+                        <td>User</td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- JavaScript for Buttons -->
+    <script>
+        // Edit Button Functionality
+        document.querySelectorAll('.edit-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const row = this.closest('tr');
+                const id = row.cells[0].textContent;
+                const name = row.cells[1].textContent;
+                const email = row.cells[2].textContent;
+                const role = row.cells[3].textContent;
+
+                // Open a modal or form for editing (you can customize this)
+                alert(`Editing User:\nID: ${id}\nName: ${name}\nEmail: ${email}\nRole: ${role}`);
+            });
+        });
+
+        // Delete Button Functionality
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const row = this.closest('tr');
+                const id = row.cells[0].textContent;
+                const name = row.cells[1].textContent;
+
+                // Confirm deletion
+                if (confirm(`Are you sure you want to delete user ${name} (ID: ${id})?`)) {
+                    row.remove(); // Remove the row from the table
+                    alert(`User ${name} (ID: ${id}) has been deleted.`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

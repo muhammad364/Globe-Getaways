@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail - Travel Agency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>GLOBE GETAWAYS</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="loginpage.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Blog Detail</h2>
+        <div id="blog-detail">
+          
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+              <h3>Globe Getaways</h3>
+              <ul>
+                <li>Hostel City, Islamabad Pakistan.</li>
+                <li>Email: globegetaways.com</li>
+                <li>Phone: +92 318 1488935</li>
+              </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blogs</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-section newsletter">
+                <h3>Newsletter</h3>
+                <p>Sign up for alerts, news, and travel insights.</p>
+                <input type="email" placeholder="Your Email Address">
+                <button>Subscribe</button>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Globe Getaways. All Rights Reserved.</p>
+           <p> <a href="terms and condition.html">Terms and Condition</a>| <a href="privacy policy.html">Privacy Policy</a> | </p>
+        </div>
+    </footer>
+    
+</body>
+</html>
+    
+
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
+    <script>
+        $(document).ready(function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const blogId = urlParams.get('id'); 
+
+          
+            const blogs = {
+                1: {
+                    title: "Top 10 Travel Tips",
+                    image: "blog 1.jpg",
+                    content: "<p>Traveling is exciting, but a little planning can make your trip hassle-free. Here are 10 essential travel tips to help you enjoy your adventure!</p><p><b>1. PLAN AHEAD</b><br>Research your destination, book accommodations, and create a flexible itinerary to make the most of your trip.</br></p> <p><b>2. Pack Light & Smart</b><br>Carry versatile clothing, use packing cubes, and roll your clothes to save space.</br></p> <p><b>3. Keep Documents Safe</b><br>Store digital copies of your passport, visa, and travel insurance on your phone and cloud storage.</br></p> <p><b>4. Download Offline Maps</b><br>Google Maps and Maps.me help navigate without internet access.</br></p> <p><b>5. Stay Aware & Safe</b><br>Avoid scams, secure your belongings, and trust your instincts in unfamiliar places.</br></p>"
+                },
+                2: {
+                    title: "Best Destinations for 2023",
+                    image: "blog 2.jpg",
+                    content: "<p>Travelers in 2023 explored breathtaking places worldwide.<b> Paris, France,</b> remained a favorite with its art, history, and cuisine.<b>Tokyo, Japan,</b> amazed visitors with its mix of tradition and modernity.<b>Bali, Indonesia,</b> offered tropical beauty, while <b>Santorini, Greece,</b> stunned with its sunsets and whitewashed charm.For adventure lovers,<b>Patagonia, Argentina, and Banff, Canada,</b> provided spectacular landscapes.<b>Rome, Italy, and Barcelona, Spain,</b>captivated with history and vibrant culture.<b>Marrakech, Morocco,</b> enchanted travelers with its colorful markets, while<b>Dubai, UAE,</b>impressed with luxury and futuristic architecture.From nature to culture, 2023 was filled with unforgettable travel experiences!</p>"
+                },
+                3: {
+                    title: "Top 5 gems in Europe",
+                    image: "blog 3.jpg",
+                    content: "<p>Europe is home to famous landmarks, but some hidden gems offer unique and breathtaking experiences.</p><p><b>1. Hallstatt, Austria</b> – A fairytale-like lakeside village with stunning alpine views and charming wooden houses.</p> <p><b>2. Colmar, France</b> – A picturesque town with colorful half-timbered houses, romantic canals, and a rich Alsatian culture.</p> <p><b>3. Alberobello, Italy</b> – Known for its whitewashed Trulli houses, this UNESCO-listed town feels like a storybook setting.</p> <p><b>4. Sintra, Portugal</b> – A magical town with fairytale palaces, lush gardens, and mystical charm near Lisbon.</p> <p><b>5. Kotor, Montenegro</b> – A stunning coastal town with medieval architecture, breathtaking bay views, and rich history.</p>"
+                }
+            };
+
+            
+            if (blogs[blogId]) {
+                const blog = blogs[blogId];
+                $("#blog-detail").html(`
+                    <img src="${blog.image}" alt="${blog.title}">
+                    <h3>${blog.title}</h3>
+                    <div>${blog.content}</div>
+                `);
+            } else {
+                $("#blog-detail").html("<p>Blog not found.</p>");
+            }
+        });
+    </script>
+</body>
+</html>

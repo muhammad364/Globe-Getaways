@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="adminstyles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="logout.html">Logout</a></li>
+            
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Dashboard</h1>
+        </header>
+
+        <!-- Cards Section -->
+        <div class="cards">
+            <div class="card">
+                <h3>Total Users</h3>
+                <p>1,234</p>
+            </div>
+            <div class="card">
+                <h3>Total Bookings</h3>
+                <p>567</p>
+            </div>
+            <div class="card">
+                <h3>Revenue</h3>
+                <p>$12,345</p>
+            </div>
+        </div>
+
+        <!-- Recent Activity Section -->
+        <div class="recent-activity">
+            <h2>Recent Activity</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Activity</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ayesha Mustansar</td>
+                        <td>Booked a Tour</td>
+                        <td>2023-10-01</td>
+                    </tr>
+                    <tr>
+                        <td>Ali Raza</td>
+                        <td>Updated Profile</td>
+                        <td>2023-10-02</td>
+                    </tr>
+                    <tr>
+                        <td>Mushaim</td>
+                        <td>Cancelled Booking</td>
+                        <td>2023-10-03</td>
+                    </tr>
+                    <tr>
+                        <td>Hajra Saddiqua</td>
+                        <td>Cancelled Booking</td>
+                        <td>2023-10-03</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- JavaScript for Logout -->
+    <script src="scripts.js"></script>
+</body>
+</html>
